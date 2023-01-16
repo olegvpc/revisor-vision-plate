@@ -18,7 +18,7 @@ router.register(r'plate/add', PlateAddViewSet)
 
 urlpatterns = [
 
-    path('index/', IndexView.as_view(), name='index'),
+    path('', IndexView.as_view(), name='index'),
     # path('plate/get/', getting_plate),
     path('', include(router.urls)),
 

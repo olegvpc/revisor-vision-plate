@@ -111,7 +111,7 @@ function addPlates (token, plateNum) {
       return Promise.reject(errorMessage)
     }
   }).then((data) => {
-    console.log(data);
+    // console.log(data);
     return {...data}
   }).catch((err) => {
     messageError = err
