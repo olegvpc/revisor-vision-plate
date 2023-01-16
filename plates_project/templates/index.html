@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>Plates</title>
+</head>
+<body>
+  <header class="header">
+    <img src="https://ie.wampi.ru/2023/01/15/plate.jpg" alt="Image with plates" class="header__logo">
+    <p class="header__logo-sub">Государственные Номера</p>
+  </header>
+  <main class="container">
+    <p class="container__text">Пусто</p>
+    <p class="error__text">-</p>
+  </main>
+  <footer class="btns">
+    <form class="form btns__btn_get" name="get-plate" novalidate>
+      <fieldset class="form__set form__set_active" id="first">
+        <label class="form__field">
+          <input type="text" class="form__input" id="token-id-input">
+          <span class="form__placeholder email-input-placeholder">
+            Bearer Token Id:
+          </span>
+          <span class="form__input-error email-input-error"></span>
+        </label>
+        <label class="form__field">
+          <input type="text" class="form__input" id="plate-id--input">
+          <span class="form__placeholder password-input-placeholder">
+            Plate Id:
+          </span>
+          <span class="form__input-error password-input-error"></span>
+        </label>
+        <button type="submit" class="form__submit button">
+          GET | /PLATE/GET
+        </button>
+      </fieldset>
+    </form>
+
+    <form class="form btns__btn_add" name="add-plate" novalidate>
+      <fieldset class="form__set form__set_active" id="second">
+        <label class="form__field">
+          <input type="text" class="form__input" id="token-input">
+          <span class="form__placeholder email-input-placeholder">
+            Bearer Token Id
+          </span>
+          <span class="form__input-error email-input-error"></span>
+        </label>
+        <label class="form__field">
+          <input type="text" class="form__input" id="plate-nom-input">
+          <span class="form__placeholder password-input-placeholder">
+            Plate Number:
+          </span>
+          <span class="form__input-error password-input-error"></span>
+        </label>
+        <button type="submit" class="form__submit button">
+          POST | /PLATE/ADD
+        </button>
+      </fieldset>
+    </form>
+  </footer>
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
