@@ -41,6 +41,10 @@ python manage.py migrate <APPS>
 Создание admin
 python manage.py createsuperuser
 
+Создать папку static на одном уровне с App и manage.py
+и выполнить 
+python manage.py collectstatic
+
 Первый запуск сервера
 python3 manage.py runserver
 
@@ -74,8 +78,24 @@ PyJWT==1.7.1
 #     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3MDMwMTY2LCJqdGkiOiIwODU3OTQ5OWYwZWI0MmY5YWE1OGNhMTQzZjhmOTZmYyIsInVzZXJfaWQiOjR9.Y9q6nSEh7ihe-IeLbEvPSG6xLZx9RQrdOwPFC32EThk"
 # }
 ```
-###Эндпоинт для фронта
+###Локальный эндпоинт для фронта
 http://127.0.0.1:8000/
+### Публичный сайт с проектом
+http://olegvpc.pythonanywhere.com
+
+Проблемы с CORS решены так
+```python
+INSTALLED_APPS = [
+    'corsheaders',
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
+]
+
+CORS_ORIGIN_ALLOW_ALL = True
+```
 
 
 
